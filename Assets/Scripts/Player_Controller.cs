@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
 
+    // happens during physics updates
     private void FixedUpdate() 
     {
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY) * acc;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(force);
     }
 
+    // happens every tick(?), for things that are not physics based
     private void Update() 
     {   
         bool grounded = (Physics.Raycast(rb.position, Vector3.down, 1f)); // raycast down to look for ground is not detecting ground? only works if allowing jump when grounded = false; // return "Ground" layer as layer
@@ -58,27 +60,5 @@ public class PlayerController : MonoBehaviour
         movementY = - movementVector.y;
 
     }
-
-    //3. Add a FixedUpdate function
-
-    // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
-
-    // void OnTriggerStay(Collider other)
-    // {
-    //     if (other.transform.tag == "ground")
-    //     {
-    //         isGrounded = true;
-    //         Debug.Log("Grounded");
-    //     }
-    //     else
-    //     {
-    //         isGrounded = false;
-    //         Debug.Log("Not Grounded!");
-    //     }
-    // }
 
 }
