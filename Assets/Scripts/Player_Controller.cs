@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     //Fix the Player movement speed
     public float acc = 0; // acceleration
 
-    public float jumpAmount = 0;
+    public float jumpAmount = 0; 
 
     //2. Assign the new Rigidbody variable
     private Rigidbody rb;
@@ -18,16 +18,18 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        Vector3 movement = new Vector3 (movementX, 0.0f, movementY) * acc;
+        
+        // Add force to the player
+        Vector3 force = movement;
+        rb.AddForce(force);
+    }
+
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
             rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
-        }
-        else {
-            Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
-
-            // Add force to the player
-            Vector3 force = movement * acc;
-            rb.AddForce(force);
         }
     }
 
