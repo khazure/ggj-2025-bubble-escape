@@ -2208,8 +2208,6 @@ MonoBehaviour:
   acc: 12
   jumpAmount: 20
   gravityScale: 2
-<<<<<<< Updated upstream
-=======
 --- !u!114 &752799555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,13 +2437,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -2.16, y: 0, z: 0}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
