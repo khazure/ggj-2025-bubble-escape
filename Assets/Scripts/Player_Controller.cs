@@ -3,6 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Fix the Player movement speed
+    public float acc = 0; // acceleration
+
+    public float friction = 0;
+
     //2. Assign the new Rigidbody variable
     private Rigidbody rb;
 
@@ -16,7 +21,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
 
         // Add force to the player
-        rb.AddForce(movement);
+        rb.AddForce(movement * acc);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
