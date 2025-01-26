@@ -5786,6 +5786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam1: {fileID: 330585543}
   Cam2: {fileID: 176882470}
+  canvas: {fileID: 26953987}
   acc: 12
   jumpAmount: 10
   gravityScale: 2

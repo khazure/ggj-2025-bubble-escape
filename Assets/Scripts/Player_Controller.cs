@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public GameObject Cam1;
     public GameObject Cam2;
 
+    //Canvas:
+    public GameObject canvas;
+
     //Fix the Player movement speed
     public float acc = 0; // acceleration
 
@@ -69,6 +72,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H)) 
+        {
+            if(canvas.activeSelf) {
+                canvas.SetActive(false);
+            } else {
+                canvas.SetActive(true);
+            }
         }
     }
 
