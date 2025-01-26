@@ -1907,12 +1907,16 @@ PrefabInstance:
       value: BubblePad
       objectReference: {fileID: 0}
     - target: {fileID: 5496926390045354405, guid: 1faee65f9b66b9a4395d5fe13dbdbb44, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26972
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496926390045354405, guid: 1faee65f9b66b9a4395d5fe13dbdbb44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 5496926390045354405, guid: 1faee65f9b66b9a4395d5fe13dbdbb44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 5496926390045354405, guid: 1faee65f9b66b9a4395d5fe13dbdbb44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3462,7 +3466,7 @@ MonoBehaviour:
   acc: 12
   jumpAmount: 20
   gravityScale: 2
-  floatAmount: 0
+  floatAmount: 5
 --- !u!114 &752799555
 MonoBehaviour:
   m_ObjectHideFlags: 0
