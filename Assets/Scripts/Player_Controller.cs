@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && grounded) 
+        if (Input.GetKeyDown(KeyCode.C)) 
         {
             if(Cam1.activeSelf) {
                 Cam1.SetActive(false);

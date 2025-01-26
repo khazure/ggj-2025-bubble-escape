@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadWinScene()
     {
-        int winID = 1;
+        int winID = 2;
         SceneManager.LoadSceneAsync(winID);
     }
 }
