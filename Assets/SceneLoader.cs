@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
@@ -16,6 +18,12 @@ public class SceneLoader : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Changes the scene based on the sceneID available in the build list
+    public void moveToScene(int sceneID) {
+        SceneManager.LoadScene(sceneID);
+    }
+
     public void LoadScene()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
@@ -24,5 +32,5 @@ public class SceneLoader : MonoBehaviour
     public void LoadWinScene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
-            }
+    }
 }
