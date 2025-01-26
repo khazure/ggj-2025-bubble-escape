@@ -6,7 +6,7 @@ public class FinishLine : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneLoader.instance.LoadScene();
+            SceneLoader.instance.LoadWinScene();
         }
     }
 }
