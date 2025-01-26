@@ -64,6 +64,12 @@ public class PlayerController : MonoBehaviour
                 Cam2.SetActive(false);
             }
         }
+
+        // quit the game when esc is pushed. not supposed to be in game character but whatever
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

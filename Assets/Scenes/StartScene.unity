@@ -488,7 +488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You have crashed landed far away from home...
+  m_text: 'You have crash landed far away from home...
 
     can you make it back? '
   m_isRightToLeft: 0

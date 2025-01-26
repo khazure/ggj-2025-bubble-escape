@@ -21,4 +21,8 @@ public class MenuNav : MonoBehaviour
         SceneManager.LoadSceneAsync(sceneID);
     }
 
+    public void quitGame() {
+        Application.Quit();
+    }
+
 }
