@@ -5,7 +5,7 @@ public class EscapeTrigger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             // Disable player movement
             other.GetComponent<PlayerController>().enabled = false;
