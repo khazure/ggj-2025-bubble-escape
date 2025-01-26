@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public float gravityScale = 0;
 
+    public float floatAmount = 0;
+
     //2. Assign the new Rigidbody variable
     private Rigidbody rb;
 
@@ -18,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private float movementY;
 
     private bool isGrounded;
+
+    //If we are floating in bubble pad.
+    private bool floating;
 
 
     // happens during physics updates
@@ -28,7 +33,12 @@ public class PlayerController : MonoBehaviour
 
         // Add force to the player
         Vector3 force = movement + gravity;
-        rb.AddForce(force);
+        if(floating) {
+            rb.AddForce(rb.GetAccumulatedForce() * -1f, ForceMode.Impulse);
+            rb.AddForce(movement + Vector3.up * floatAmount);
+        } else {
+            rb.AddForce(force);
+        }
     }
 
     // happens every tick(?), for things that are not physics based
@@ -59,6 +69,32 @@ public class PlayerController : MonoBehaviour
         movementX = - movementVector.x;
         movementY = - movementVector.y;
 
+    }
+
+    //On coliding with a triggerable object.
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("BubblePad"))
+        {
+            rb.useGravity = false;
+            rb.linearDamping = 0.5f;
+            //rb.linearVelocity = Vector3.zero;
+            rb.AddForce(rb.GetAccumulatedForce() * -1f, ForceMode.Impulse);
+            floating = true;
+            //var accumulatedForce = rb.GetAccumulatedForce();
+        }
+
+    }
+    //On exiting a triggerable object.
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("BubblePad"))
+        {
+            rb.useGravity = true;
+            rb.linearDamping = 0f;
+            rb.AddForce(rb.GetAccumulatedForce() * -1f, ForceMode.Impulse);
+            floating = false;
+        }
     }
 
 }
