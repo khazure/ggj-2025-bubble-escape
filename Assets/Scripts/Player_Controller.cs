@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Cameras:
+    public GameObject Cam1;
+    public GameObject Cam2;
+
     //Fix the Player movement speed
     public float acc = 0; // acceleration
 
@@ -49,11 +53,24 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
         }
+
+        if (Input.GetKeyDown(KeyCode.C) && grounded) 
+        {
+            if(Cam1.activeSelf) {
+                Cam1.SetActive(false);
+                Cam2.SetActive(true);
+            } else {
+                Cam1.SetActive(true);
+                Cam2.SetActive(false);
+            }
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cam1.SetActive(true);
+        Cam2.SetActive(false);
         rb = GetComponent <Rigidbody>();
     }
 
@@ -66,8 +83,13 @@ public class PlayerController : MonoBehaviour
 
         //Assign the movement variables
         // negative due to camera position
-        movementX = - movementVector.x;
-        movementY = - movementVector.y;
+        if(Cam1.activeSelf) {
+            movementX = - movementVector.x;
+            movementY = - movementVector.y;
+        } else {
+            movementX = movementVector.x;
+            movementY = movementVector.y;
+        }
 
     }
 
