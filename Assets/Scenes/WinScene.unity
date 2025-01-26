@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972709727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d92b1ddfcd012004daf39b3b9af4a1cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 65cafe8de5b694797b190092a28e31ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1062013773
@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906145092934291930, guid: 4c430c21b6cdfd64fa091cd6ea3df0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: MenuNav, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 906145092934291930, guid: 4c430c21b6cdfd64fa091cd6ea3df0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
